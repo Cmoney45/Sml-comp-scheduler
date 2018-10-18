@@ -6,7 +6,7 @@ const $exampleList = $("#example-list");
 
 // The API object contains methods for each kind of request we'll make
 const API = {
-  saveExample: (example) => {
+  saveExample: example => {
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
@@ -22,7 +22,7 @@ const API = {
       type: "GET"
     });
   },
-  deleteExample: (id) => {
+  deleteExample: id => {
     return $.ajax({
       url: "api/examples/" + id,
       type: "DELETE"
@@ -32,8 +32,8 @@ const API = {
 
 // refreshExamples gets new examples from the db and repopulates the list
 const refreshExamples = () => {
-  API.getExamples().then( (data) =>{
-    const $examples = data.map( (example) => {
+  API.getExamples().then(data => {
+    const $examples = data.map(example => {
       const $a = $("<a>")
         .text(example.text)
         .attr("href", "/example/" + example.id);
@@ -61,7 +61,7 @@ const refreshExamples = () => {
 
 // handleFormSubmit is called whenever we submit a new example
 // Save the new example to the db and refresh the list
-const handleFormSubmit = (event) => {
+const handleFormSubmit = event => {
   event.preventDefault();
 
   const example = {
@@ -74,7 +74,7 @@ const handleFormSubmit = (event) => {
     return;
   }
 
-  API.saveExample(example).then( () => {
+  API.saveExample(example).then(() => {
     refreshExamples();
   });
 
@@ -89,7 +89,7 @@ const handleDeleteBtnClick = () => {
     .parent()
     .attr("data-id");
 
-  API.deleteExample(idToDelete).then( () =>{
+  API.deleteExample(idToDelete).then(() => {
     refreshExamples();
   });
 };
