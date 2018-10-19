@@ -3,59 +3,59 @@ module.exports = (sequelize, DataTypes) => {
     userAccount: {
       type: DataTypes.VARCHAR(255),
 
-  },
-  userPassword: {
+    },
+      userPassword: {
       type: DataTypes.VARCHAR(255),
 
-  },
-  userFirstName: {
+      },
+      userFirstName: {
       type: DataTypes.VARCHAR(255),
 
-  },
-  userLastName: {
+    },
+    userLastName: {
       type: DataTypes.VARCHAR(255),
 
-  },
-  managerID: {
+    },
+    managerID: {
       type: DataTypes.INT,
 
-  },
-  userFirstName: {
+    },
+    userFirstName: {
       type: DataTypes.FLOAT(2),
 
-  },
-  isManager: {
+    },
+    isManager: {
       type: DataTypes.BOOLEAN,
 
-  },
-  sundayAvailable: {
+    },
+    sundayAvailable: {
       type: DataTypes.BOOLEAN,
 
-  },
-  mondayAvailable: {
+    },
+    mondayAvailable: {
       type: DataTypes.BOOLEAN,
 
-  },
-  tuesdayAvailable: {
+    },
+    tuesdayAvailable: {
       type: DataTypes.BOOLEAN,
 
-  },
-  wednesdayAvailable: {
+    },
+    wednesdayAvailable: {
       type: DataTypes.BOOLEAN,
 
-  },
-  thursdayAvailable: {
+    },
+    thursdayAvailable: {
       type: DataTypes.BOOLEAN,
 
-  },
-  fridayAvailable: {
+    },
+    fridayAvailable: {
       type: DataTypes.BOOLEAN,
 
-  },
-  saturdayAvailable: {
+    },
+    saturdayAvailable: {
       type: DataTypes.BOOLEAN,
 
-  },
+    },
   });
 
   User.associate = (models) => {
