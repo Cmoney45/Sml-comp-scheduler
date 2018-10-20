@@ -1,13 +1,13 @@
 module.exports = (sequelize, DataTypes) => {
-  const Company = sequelize.define("User", {
+  const Company = sequelize.define("Company", {
     companyName: {
-      type: DataTypes.VARCHAR(255)
+      type: DataTypes.STRING
     },
     companyBeginHours: {
-      type: DataTypes.VARCHAR(255)
+      type: DataTypes.TIME
     },
     companyEndHours: {
-      type: DataTypes.VARCHAR(255)
+      type: DataTypes.TIME
     },
     sundayOpen: {
       type: DataTypes.BOOLEAN
@@ -30,8 +30,9 @@ module.exports = (sequelize, DataTypes) => {
     saturdayOpen: {
       type: DataTypes.BOOLEAN
     }
-  })
-  Company.associate = (models) => {
+  });
+
+  Company.associate = models => {
     Company.hasMany(models.User, {
       onDelete: "cascade"
     });
