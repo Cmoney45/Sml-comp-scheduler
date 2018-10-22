@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const Scheduler = sequelize.define("Squeduler", {
+  const Scheduler = sequelize.define("Scheduler", {
     scheduledDate: {
       type: DataTypes.DATE
     },

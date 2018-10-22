@@ -4,10 +4,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING
     },
     companyBeginHours: {
-      type: DataTypes.TIME
+      type: DataTypes.STRING
     },
     companyEndHours: {
-      type: DataTypes.TIME
+      type: DataTypes.STRING
     },
     companyMinWorkers: {
       type: DataTypes.INTEGER
@@ -37,7 +37,6 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.BOOLEAN
     }
   });
-
   Company.associate = models => {
     Company.hasMany(models.User, {
       onDelete: "cascade"
