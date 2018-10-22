@@ -19,6 +19,10 @@ module.exports = app => {
     });
   });
 
+  app.get("/login", (req, res) => {
+    res.render("login");
+  });
+
   // Load example page and pass in an example by id
   app.get("/example/:id", (req, res) => {
     db.Example.findOne({ where: { id: req.params.id } }).then(dbExample => {

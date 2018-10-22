@@ -1,61 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../styles/styles.css" media="screen" title="no title" charset="utf-8">
-  <title>Home Page</title>
-  <style>
-      #userToAdd .inputBox {
-    position: relative;
-
-}
-#userToAdd .inputBox input {
-    width: 100%;
-    padding: 10px 0;
-    font-size: 16px;
-    color: #fff;
-    margin-bottom: 30px;
-    border: none;
-    border-bottom: 1px solid #fff;
-    outline: none;
-    background: transparent;
-}
-#userToAdd .inputBox label{
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 10px;
-    font-size: 16px;
-    color: #fff;
-    pointer-events: none;
-    transition: .5s;
-}
-#userToAdd .inputBox input:focus ~ label,
-#userToAdd .inputBox input:valid ~ label {
-    top: -18px;
-    left: 0;
-    color: #03a9f4;
-    font-size: 12px;
-}
-#userToAdd .custom-checkbox{
-    margin-bottom: 10px;
-}
-#userToAdd input[type="submit"] {
-    border: none;
-    outline: none;
-    color: #fff;
-    background: #03a9f4;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-  </style>
-</head>
-
-<body>
-    <div class="jumbotron" >
+<div class="jumbotron" >
         <h1 class="text-center">This is where you can view and add Users</h1>
     </div>    
 <div class="container">
@@ -92,7 +35,7 @@
 </div> 
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!-- <script src="/js/index.js"></script> -->
+<script src="/js/index.js"></script>
 
 <script>
 $("body").css("background-image", "url('../images/ySLiJ.jpg')");
@@ -116,6 +59,3 @@ days.forEach( day => {
 });
 $("#userToAdd").append(submit);
 </script>
-</body>
-
-</html>
