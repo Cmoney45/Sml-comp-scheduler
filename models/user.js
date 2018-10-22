@@ -15,9 +15,6 @@ module.exports = (sequelize, DataTypes) => {
     managerID: {
       type: DataTypes.INTEGER
     },
-    userFirstName: {
-      type: DataTypes.FLOAT(2)
-    },
     isManager: {
       type: DataTypes.BOOLEAN
     },

@@ -1,3 +1,11 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+#addUserButton:link {
+color: white;
+text-decoration: none;
+}
+#addUserButton:visited {
+  color: white;
+}
