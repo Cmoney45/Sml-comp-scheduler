@@ -9,6 +9,12 @@ module.exports = (sequelize, DataTypes) => {
     companyEndHours: {
       type: DataTypes.TIME
     },
+    companyMinWorkers: {
+      type: DataTypes.INTEGER
+    },
+    companyMaxWorkers: {
+      type: DataTypes.INTEGER
+    },
     sundayOpen: {
       type: DataTypes.BOOLEAN
     },
