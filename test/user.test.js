@@ -1,7 +1,7 @@
 const chai = require("chai");
 const chaiHttp = require("chai-http");
-const server = require("../../server");
-const db = require("../../models");
+const server = require("../server");
+const db = require("../models");
 const expect = chai.expect;
 
 // Setting up the chai http plugin
@@ -102,7 +102,7 @@ describe("GET /api/users/", () => {
       }
     ]).then(() => {
       // Request the route that returns all examples
-      request.get("/api/users/").end( (err, res) => {
+      request.get("/api/users/").end((err, res) => {
         const responseStatus = res.status;
         const responseBody = res.body;
 
