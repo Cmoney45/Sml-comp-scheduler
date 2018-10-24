@@ -1,0 +1,61 @@
+<div class="jumbotron" >
+        <h1 class="text-center">This is where you can view and add Users</h1>
+    </div>    
+<div class="container">
+    <div class="row justify-content-around">
+        <div class="col-6 userDiv">
+            <h2 class="text-center">Current Users</h2>
+            {{#each User}}
+            <p id="{{User.id}}">{{User.userLastname}}, {{User.FirstName}}</p>
+            {{/each}}    
+        </div>
+
+        <div class="col-6">
+            <form id="userToAdd">
+                <div class="inputBox">
+                    <input type="text" name="" required="">
+                    <label>First Name</label>
+                </div>
+                <div class="inputBox">
+                    <input type="text" name="" required="">
+                    <label>Last Name</label>
+                </div>
+                <div class="inputBox">
+                    <input type="password" name="" required="">
+                    <label>New Password</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="customCheck8">
+                    <label class='custom-control-label' for=customCheck8>Manager?</label>
+                </div>
+                <h2>Availability</h2>
+            </form>
+        </div>
+    </div>
+</div> 
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+
+<script>
+$("body").css("background-image", "url('../images/ySLiJ.jpg')");
+$("body").css("color", "white");
+$(".jumbotron").css("background-color","#225066")
+const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+let checkNum = 1
+const submit = $("<input type='submit' value='Submit'>");
+
+days.forEach( day => {
+    let num = checkNum.toString();
+    const addDiv = $("<div class='custom-control custom-checkbox'>");
+    const addInput = $("<input type='checkbox' class='custom-control-input' id=''>");
+    const addLable = $("<label class='custom-control-label' for=''>").text(day);
+        addInput.attr({id: `customCheck ${num}`});
+        addLable.attr({for: `customCheck ${num}`});
+        addDiv.append(addInput);
+        addDiv.append(addLable);
+        $("#userToAdd").append(addDiv);
+    checkNum++;
+});
+$("#userToAdd").append(submit);
+</script>

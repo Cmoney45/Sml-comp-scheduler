@@ -3,12 +3,24 @@ const db = require("../models");
 module.exports = app => {
   // Load index page
   app.get("/", (req, res) => {
-    db.Example.findAll({}).then(dbExamples => {
+    db.User.findAll({}).then(User => {
       res.render("index", {
         msg: "Welcome!",
-        examples: dbExamples
+        users: User
       });
     });
+  });
+
+  app.get("/adduser", (req, res) => {
+    db.User.findAll({}).then(User => {
+      res.render("adduser", {
+        users: User
+      });
+    });
+  });
+
+  app.get("/login", (req, res) => {
+    res.render("login");
   });
 
   // Load example page and pass in an example by id
