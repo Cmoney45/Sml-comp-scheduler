@@ -41,6 +41,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   });
 
+<<<<<<< HEAD
   // User.associate = models => {
   //   User.belongsTo(models.Company, {
   //     foreignKey: {
@@ -48,6 +49,15 @@ module.exports = (sequelize, DataTypes) => {
   //     }
   //   });
   // };
+=======
+//   User.associate = models => {
+//     User.belongsTo(models.Company, {
+//       foreignKey: {
+//         allowNull: false
+//       }
+//     });
+//   };
+>>>>>>> stash
 
   return User;
 };
