@@ -1,8 +1,14 @@
-{
+{   
+    "parserOptions": {
+        "ecmaVersion": 2018
+    },
     "env": {
         "browser": true,
         "commonjs": true,
-        "node": true
+        "jquery": true,
+        "node": true,
+        "mocha": true,        
+        "es6": true
     },
     "extends": "prettier",
     "plugins": [
