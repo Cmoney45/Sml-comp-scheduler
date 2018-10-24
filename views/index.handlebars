@@ -29,5 +29,504 @@
   </div>
 </div>
 
+<style>
+
+input {
+    width: 65px;
+}
+
+label {
+    padding-right: 0;
+}
+
+.inOut {
+    margin-right: 0%;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.42em;
+  color:#000000;
+  /* background-color:#1F2739; */
+}
+
+td {
+    width: 165px;
+}
+
+tr th {
+    color: #000000;
+}
+
+/* h1 {
+  font-size:3em; 
+  font-weight: 300;
+  line-height:1em;
+  text-align: center;
+  color: #4DC3FA;
+} */
+
+/* h2 {
+  font-size:1em; 
+  font-weight: 300;
+  text-align: center;
+  display: block;
+  line-height:1em;
+  padding-bottom: 2em;
+  color: #FB667A;
+}
+
+h2 a {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #FB667A;
+  text-decoration: none;
+} */
+
+/* .blue { color: #185875; }
+.yellow { color: #FFF842; } */
+
+/* .container th h1 {
+	  font-weight: bold;
+	  font-size: 1em;
+  text-align: left;
+  color: #185875;
+} */
+
+.container td {
+	  font-weight: normal;
+	  font-size: 1em;
+  -webkit-box-shadow: 0 2px 2px -2px #0E1119;
+	   -moz-box-shadow: 0 2px 2px -2px #0E1119;
+	        box-shadow: 0 2px 2px -2px #0E1119;
+}
+
+.container {
+	  text-align: left;
+	  overflow: hidden;
+	  width: 80%;
+	  margin: 0 auto;
+  display: table;
+  padding: 0 0 8em 0;
+}
+
+.container td, .container th {
+	  padding-bottom: 2%;
+	  padding-top: 2%;
+  padding-left:2%;  
+}
+
+/* Background-color of the odd rows */
+.container tr:nth-child(odd) {
+	  /* background-color: #323C50; */
+      background-color: #ffffff;
+}
+
+/* Background-color of the even rows */
+.container tr:nth-child(even) {
+	  /* background-color: #2C3446; */
+      background-color: #cccccc;
+}
+
+.container th {
+	  background-color: #cccccc;
+}
+
+.container td:first-child { color: #000000; }
+
+/* .container tr:hover {
+   background-color: #464A52;
+-webkit-box-shadow: 0 6px 6px -6px #0E1119;
+	   -moz-box-shadow: 0 6px 6px -6px #0E1119;
+	        box-shadow: 0 6px 6px -6px #0E1119;
+} */
+
+
+.container td:hover {
+  background-color: #f2f2f2;
+  color: #403E10;
+  font-weight: bold;
+  
+  box-shadow: #f2f2f2 -1px 1px, #f2f2f2 -2px 2px, #f2f2f2 -3px 3px, #f2f2f2 -4px 4px, #f2f2f2 -5px 5px, #f2f2f2 -6px 6px;
+  transform: translate3d(6px, -6px, 0);
+  
+  transition-delay: 0s;
+	  transition-duration: 0.4s;
+	  transition-property: all;
+  transition-timing-function: line;
+}
+
+@media (max-width: 800px) {
+.container td:nth-child(4),
+.container th:nth-child(4) { display: none; }
+}
+</style>
+<body>
+        <table class="container">
+            <thead>
+                <tr>
+                    <th>Employee Name</th>
+                    <th>Employee Total hours</th>
+                    <th>Sunday</th>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                    <th>Friday</th>
+                    <th>Saturday</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Leslie Knope</td>
+                    <td>32</td>
+                    <td>
+                        <p class="inOut">
+                        <label>In</label> 
+                        <input type="text">
+                        </p>
+                        <p class="inOut">
+                        <label>Out</label> 
+                        <input type="text">
+                        </p>
+                    </td>
+                    <td>
+                        <p class="inOut">
+                        <label>In</label> 
+                        <input type="text">
+                        </p>
+                        <p class="inOut">
+                        <label>Out</label> 
+                        <input type="text">
+                        </p>
+                    </td>
+                    <td>
+                        <p class="inOut">
+                        <label>In</label> 
+                        <input type="text">
+                        </p>
+                        <p class="inOut">
+                        <label>Out</label> 
+                        <input type="text">
+                        </p>
+                    </td>
+                    <td>
+                        <p class="inOut">
+                        <label>In</label> 
+                        <input type="text">
+                        </p>
+                        <p class="inOut">
+                        <label>Out</label> 
+                        <input type="text">
+                        </p>
+                    </td>
+                    <td>
+                        <p class="inOut">
+                        <label>In</label> 
+                        <input type="text">
+                        </p>
+                        <p class="inOut">
+                        <label>Out</label> 
+                        <input type="text">
+                        </p>
+                    </td>
+                    <td>
+                        <p class="inOut">
+                        <label>In</label> 
+                        <input type="text">
+                        </p>
+                        <p class="inOut">
+                        <label>Out</label> 
+                        <input type="text">
+                        </p>
+                    </td>
+                    <td>
+                        <p class="inOut">
+                        <label>In</label> 
+                        <input type="text">
+                        </p>
+                        <p class="inOut">
+                        <label>Out</label> 
+                        <input type="text">
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ron Swanson</td>
+                    <td>32</td>
+                    <td>
+                        <p class="inOut">
+                        <label>In</label> 
+                        <input type="text">
+                        </p>
+                        <p class="inOut">
+                        <label>Out</label> 
+                        <input type="text">
+                        </p>
+                    </td>
+                    <td>
+                        <p class="inOut">
+                        <label>In</label> 
+                        <input type="text">
+                        </p>
+                        <p class="inOut">
+                        <label>Out</label> 
+                        <input type="text">
+                        </p>
+                    </td>
+                    <td>
+                        <p class="inOut">
+                        <label>In</label> 
+                        <input type="text">
+                        </p>
+                        <p class="inOut">
+                        <label>Out</label> 
+                        <input type="text">
+                        </p>
+                    </td>
+                    <td>
+                        <p class="inOut">
+                        <label>In</label> 
+                        <input type="text">
+                        </p>
+                        <p class="inOut">
+                        <label>Out</label> 
+                        <input type="text">
+                        </p>
+                    </td>
+                    <td>
+                        <p class="inOut">
+                        <label>In</label> 
+                        <input type="text">
+                        </p>
+                        <p class="inOut">
+                        <label>Out</label> 
+                        <input type="text">
+                        </p>
+                    </td>
+                    <td>
+                        <p class="inOut">
+                        <label>In</label> 
+                        <input type="text">
+                        </p>
+                        <p class="inOut">
+                        <label>Out</label> 
+                        <input type="text">
+                        </p>
+                    </td>
+                    <td>
+                        <p class="inOut">
+                        <label>In</label> 
+                        <input type="text">
+                        </p>
+                        <p class="inOut">
+                        <label>Out</label> 
+                        <input type="text">
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Tom Haverford</td>
+                    <td>32</td>
+                    <td>
+                        <p class="inOut">
+                        <label>In</label> 
+                        <input type="text">
+                        </p>
+                        <p class="inOut">
+                        <label>Out</label> 
+                        <input type="text">
+                        </p>
+                    </td>
+                    <td>
+                        <p class="inOut">
+                        <label>In</label> 
+                        <input type="text">
+                        </p>
+                        <p class="inOut">
+                        <label>Out</label> 
+                        <input type="text">
+                        </p>
+                    </td>
+                    <td>
+                        <p class="inOut">
+                        <label>In</label> 
+                        <input type="text">
+                        </p>
+                        <p class="inOut">
+                        <label>Out</label> 
+                        <input type="text">
+                        </p>
+                    </td>
+                    <td>
+                        <p class="inOut">
+                        <label>In</label> 
+                        <input type="text">
+                        </p>
+                        <p class="inOut">
+                        <label>Out</label> 
+                        <input type="text">
+                        </p>
+                    </td>
+                    <td>
+                        <p class="inOut">
+                        <label>In</label> 
+                        <input type="text">
+                        </p>
+                        <p class="inOut">
+                        <label>Out</label> 
+                        <input type="text">
+                        </p>
+                    </td>
+                    <td>
+                        <p class="inOut">
+                        <label>In</label> 
+                        <input type="text">
+                        </p>
+                        <p class="inOut">
+                        <label>Out</label> 
+                        <input type="text">
+                        </p>
+                    </td>
+                    <td>
+                        <p class="inOut">
+                        <label>In</label> 
+                        <input type="text">
+                        </p>
+                        <p class="inOut">
+                        <label>Out</label> 
+                        <input type="text">
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Jean-Ralphio</td>
+                    <td>32</td>
+                    <td>
+                        <p class="inOut">
+                        <label>In</label> 
+                        <input type="text">
+                        </p>
+                        <p class="inOut">
+                        <label>Out</label> 
+                        <input type="text">
+                        </p>
+                    </td>
+                    <td>
+                        <p class="inOut">
+                        <label>In</label> 
+                        <input type="text">
+                        </p>
+                        <p class="inOut">
+                        <label>Out</label> 
+                        <input type="text">
+                        </p>
+                    </td>
+                    <td>
+                        <p class="inOut">
+                        <label>In</label> 
+                        <input type="text">
+                        </p>
+                        <p class="inOut">
+                        <label>Out</label> 
+                        <input type="text">
+                        </p>
+                    </td>
+                    <td>
+                        <p class="inOut">
+                        <label>In</label> 
+                        <input type="text">
+                        </p>
+                        <p class="inOut">
+                        <label>Out</label> 
+                        <input type="text">
+                        </p>
+                    </td>
+                    <td>
+                        <p class="inOut">
+                        <label>In</label> 
+                        <input type="text">
+                        </p>
+                        <p class="inOut">
+                        <label>Out</label> 
+                        <input type="text">
+                        </p>
+                    </td>
+                    <td>
+                        <p class="inOut">
+                        <label>In</label> 
+                        <input type="text">
+                        </p>
+                        <p class="inOut">
+                        <label>Out</label> 
+                        <input type="text">
+                        </p>
+                    </td>
+                    <td>
+                        <p class="inOut">
+                        <label>In</label> 
+                        <input type="text">
+                        </p>
+                        <p class="inOut">
+                        <label>Out</label> 
+                        <input type="text">
+                        </p>
+                    </td>
+                </tr>
+                             
+            </tbody>
+        </table>
+
+    <!-- <div>
+        <table class="container">
+        {{#each User}}
+        <tr id="{{User.id}}">    
+            <td>
+                {{User.userLastname}}, {{User.FirstName}}
+            </td>
+            <td>
+            </td>
+            <td>
+                {{#if User.sundayAvilable}}
+                inputs
+                {{/if}}
+            </td>
+            <td>
+                {{#if User.mondayAvilable}}
+                inputs
+                {{/if}}
+            </td>
+            <td>
+                {{#if User.tuesdayAvilable}}
+                inputs
+                {{/if}}
+            </td>
+            <td>
+                {{#if User.wednesdayAvilable}}
+                inputs
+                {{/if}}
+            </td>
+            <td>
+                {{#if User.thursdayAvilable}}
+                inputs
+                {{/if}}
+            </td>
+            <td>
+                {{#if User.fridayAvilable}}
+                inputs
+                {{/if}}
+            </td>
+            <td>
+                {{#if User.saturdayAvilable}}
+                inputs
+                {{/if}}
+            </td>
+        </tr>
+        {{/each}}
+        </table>
+    </div> -->
+</body>
+
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
