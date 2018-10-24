@@ -2,6 +2,28 @@
   line-height: 2.5;
 }
 
+<<<<<<< HEAD
+header {
+font-family: 'Montserrat', sans-serif;
+}
+
+brand-logo {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.mainpanel-content {
+  color: rgb(221, 227, 255);
+}
+
+.container {
+  color: rgb(221, 227, 255);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.login-box {
+  height: 100%;
+}
+=======
 #addUserButton:link {
 color: white;
 text-decoration: none;
@@ -124,3 +146,4 @@ body {
   border-radius: 5px;
 }
 /*-------End of adduser page-------*/
+>>>>>>> master
