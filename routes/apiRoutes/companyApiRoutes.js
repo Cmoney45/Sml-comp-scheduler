@@ -9,10 +9,10 @@ module.exports = app => {
   });
 
   // Get specific Company
-  app.get("/api/users/:id", (req, res) => {
+  app.get("/api/company/:id", (req, res) => {
     const { id } = req.params;
 
-    db.User.findAll({
+    db.Company.findAll({
       where: { id }
     }).then(dbCompanyUnique => {
       res.json(dbCompanyUnique);
