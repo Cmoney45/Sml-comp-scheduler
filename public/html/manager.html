@@ -1,0 +1,88 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Manager</title>
+        <!-- JQuery -->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <!-- Font Awesome -->
+        <script src="https://use.fontawesome.com/b38c8ed4c7.js"></script>
+        <!-- CSS Reset -->
+        <link rel="stylesheet" href="../public/styles/reset.css">
+        <!-- Google Icons -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <!-- Materialize CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+        <!-- Materialize JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script> 
+        <!-- CSS -->
+        <link rel="stylesheet" href="../public/styles/styles.css">
+    </head>
+
+    <body>
+
+        <header>
+            <nav>
+                <div class="nav-wrapper green">
+                    <i class="fa fa-address-book-o fa-2x" aria-hidden="true" id=logo-icon></i>
+                    <a href="./login.html" class="brand-logo" id="logo"> Scheduler </a>
+                    <ul class="right hide-on-med-and-down" id="head-nav-links z-depth-6">
+                        <li> <a href=""> <i class="material-icons">email</i> Inbox </a></li>
+                        <li><a href="./request.html"> <i class="material-icons">add_circle_outline</i> Time-off Request </a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+          
+        <main>
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 z-depth-20 mainpanel">
+                        <div id="mainpanel-content">
+                            <h1 class="center-align">Calendar</h1>
+                            <div class="divider"></div>
+                        </div>
+                    </div>
+                    <div class="calendar center-align">
+                            <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=v4fpbjr0ns656leali2bntm2sg%40group.calendar.google.com&amp;color=%232F6309&amp;ctz=America%2FChicago" style="border:solid 10px ##4caf50" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div class="fixed-action-btn">
+                <a href="#message" class="modal-trigger btn btn-large btn-floating amber waves-effect waves-light">
+                  <i class="large material-icons">chat</i>
+                </a>
+              </div>
+
+        <div id="message" class="modal modal-fixed-footer">
+            <div class="modal-content">
+                  <h4>CHAT TEST</h4>
+                  <p>TEST TEST</p>
+            </div>
+            <div class="modal-footer">
+                  <a href="" class="modal-action modal-close waves-effect btn-flat">Close</a>
+            </div>
+        </div>
+
+    </body>
+    <script type="text/javascript">
+         $(document).ready(function() {
+           $(".modal-trigger").leanModal();
+       });
+    </script>
+</html>
+
+<!-- CHAT BOX ICON:   <i class="material-icons">message</i>   --> 
+
+<!-- TIME OFF REQUEST:   <i class="material-icons">add_circle_outline</i>   -->
+
+<!-- REQUEST APPROVED (make green):  <i class="material-icons">check_circle_outline</i>   -->
+
+<!-- REQUEST DENIED (make red): <i class="material-icons">highlight_off</i>   -->
+
+
+                
