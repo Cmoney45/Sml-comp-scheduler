@@ -101,9 +101,10 @@ describe("GET /api/company/", () => {
           });
 
         // The `done` function is used to end any asynchronous tests
-        done();
+        // done();
       });
     });
+    done();
   });
 
   it("should find one company", done => {
@@ -171,8 +172,9 @@ describe("GET /api/company/", () => {
           });
 
         // The `done` function is used to end any asynchronous tests
-        done();
+        // done();
       });
     });
+    done();
   });
 });

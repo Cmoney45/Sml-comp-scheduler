@@ -212,8 +212,9 @@ describe("GET /api/users/", () => {
           });
 
         // The `done` function is used to end any asynchronous tests
-        done();
+        // done();
       });
     });
+    done();
   });
 });
