@@ -2,8 +2,6 @@
   line-height: 2.5;
 }
 
-<<<<<<< HEAD
-=======
 header {
 font-family: 'Montserrat', sans-serif;
 }
@@ -24,7 +22,6 @@ brand-logo {
 .login-box {
   height: 100%;
 }
->>>>>>> stash
 #addUserButton:link {
 color: white;
 text-decoration: none;
@@ -147,7 +144,6 @@ body {
   border-radius: 5px;
 }
 /*-------End of adduser page-------*/
-<<<<<<< HEAD
 
 /* Begin table page */
 input {
@@ -282,5 +278,3 @@ transition-timing-function: line;
 }
 
 /* End table page */
-=======
->>>>>>> stash
