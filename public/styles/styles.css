@@ -101,7 +101,6 @@ body {
 /*-----------adduser page----------*/
 #userToAdd .inputBox {
   position: relative;
-
 }
 #userToAdd .inputBox input {
   width: 100%;
@@ -142,6 +141,12 @@ body {
   padding: 10px 20px;
   cursor: pointer;
   border-radius: 5px;
+}
+#userToAdd .custom-checkbox .custom-control-label {
+  color: #fff;
+}
+.addUserList {
+  font-size: 30px;
 }
 /*-------End of adduser page-------*/
 

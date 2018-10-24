@@ -41,13 +41,13 @@ module.exports = (sequelize, DataTypes) => {
     }
   });
 
-//   User.associate = models => {
-//     User.belongsTo(models.Company, {
-//       foreignKey: {
-//         allowNull: false
-//       }
-//     });
-//   };
+  //User.associate = models => {
+  //     User.belongsTo(models.Company, {
+  //       foreignKey: {
+  //         allowNull: false
+  //       }
+  //     });
+  //   };
 
   return User;
 };

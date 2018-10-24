@@ -1,46 +1,3 @@
-<div class="jumbotron" >
-        <h1 class="text-center">This is where you can view and add Users</h1>
-    </div>    
-<div class="container">
-    <div class="row justify-content-around">
-        <div class="col-6 userDiv">
-            <h2 class="text-center">Current Users</h2>
-            {{#each users}}
-            <p id="{{id}}" class="addUserList">{{userLastName}}, {{userFirstName}}</p>
-            {{/each}}    
-        </div>
-
-        <div class="col-6">
-            <form id="userToAdd">
-                <div class="inputBox">
-                    <input id="firstName" type="text" name="" required="">
-                    <label>First Name</label>
-                </div>
-                <div class="inputBox">
-                    <input id="lastName" type="text" name="" required="">
-                    <label>Last Name</label>
-                </div>
-                <div class="inputBox">
-                    <input id="passWord" type="password" name="" required="">
-                    <label>New Password</label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="customCheck8">
-                    <label class='custom-control-label' for="customCheck8">Manager?</label>
-                </div>
-                <h2>Availability</h2>
-            </form>
-        </div>
-    </div>
-</div> 
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script>
-
-$("body").css("background-image", "url('../images/ySLiJ.jpg')");
-$("body").css("color", "white");
-$(".jumbotron").css("background-color", "#225066")
-
 $(() => {
   const makeAvailability = () => {
     const days = [
@@ -107,5 +64,3 @@ $(() => {
     });
   };
 });
-
-</script>
