@@ -2,7 +2,6 @@
   line-height: 2.5;
 }
 
-<<<<<<< HEAD
 header {
 font-family: 'Montserrat', sans-serif;
 }
@@ -23,7 +22,6 @@ brand-logo {
 .login-box {
   height: 100%;
 }
-=======
 #addUserButton:link {
 color: white;
 text-decoration: none;
@@ -146,4 +144,3 @@ body {
   border-radius: 5px;
 }
 /*-------End of adduser page-------*/
->>>>>>> master
