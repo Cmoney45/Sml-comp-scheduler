@@ -1,19 +1,35 @@
+const db = require("../models");
+
 module.exports = app => {
   // Load index page
   app.get("/", (req, res) => {
-    res.render("index");
+    db.User.findAll({}).then(User => {
+      res.render("index", {
+        msg: "Welcome!",
+        users: User
+      });
+    });
   });
 
   app.get("/adduser", (req, res) => {
-    res.render("adduser");
+    db.User.findAll({}).then(User => {
+      res.render("adduser", {
+        users: User
+      });
+    });
   });
 
   app.get("/login", (req, res) => {
     res.render("login");
   });
 
-  // Render 404 page for any unmatched routes
+  // Render the index page for any unmatched routes
   app.get("*", (req, res) => {
-    res.render("index");
+    db.User.findAll({}).then(User => {
+      res.render("index", {
+        msg: "Welcome!",
+        users: User
+      });
+    });
   });
 };

@@ -1,443 +1,123 @@
-{{!-- <div id="home">
-  <div class="container">
-    <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>Schedule</h2>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-          </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-          </div>
-          <button id="submit" class="btn btn-primary float-right">Add User</button>
-        </form>
-        <button class="btn btn-lg btn-danger"><a id="addUserButton" href="/adduser">Add User</a></button>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each users}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
-      </div>
-    </div>
-  </div>
-</div> --}}
+<table class="container">
+    <thead>
+        <tr id="tableHead">
+            <th>Employee Name</th>
+            <th>Employee Total hours</th>
+            <th>Sunday</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+            <th>Saturday</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each users }}
+        <tr id="{{id}}">
+            <td>{{userLastName}}, {{userFirstName}}</td>
+            <td class="totalHours"></td>
 
+            {{#if sundayAvailable}}
+            <td>
+                <label class="tableLable">In</label>
+                <input type="text" class="timepicker tableInput" id="sunIn{{id}}">
+                <label class="tableLable">Out</label>
+                <input type="text" class="timepicker tableInput" id="sunOut{{id}}">
+            </td>
+            {{else}}
+            <td></td>
+            {{/if}}
 
-    {{!-- <div>
-        <table class="container">
-           <thead>
-              <tr>
-                  <th>Employee Name</th>
-                  <th>Employee Total hours</th>
-                  <th>Sunday</th>
-                  <th>Monday</th>
-                  <th>Tuesday</th>
-                  <th>Wednesday</th>
-                  <th>Thursday</th>
-                  <th>Friday</th>
-                  <th>Saturday</th>
-              </tr>
-          </thead>
-        {{#each User}}
-        <tr id="{{User.id}}">    
+            {{#if mondayAvailable}}
             <td>
-                {{User.userLastname}}, {{User.FirstName}}
+                <label class="tableLable">In</label>
+                <input type="text" class="timepicker tableInput" id="monIn{{id}}">
+                <label class="tableLable">Out</label>
+                <input type="text" class="timepicker tableInput" id="monOut{{id}}">
             </td>
+            {{else}}
+            <td></td>
+            {{/if}}
+
+            {{#if tuesdayAvailable}}
             <td>
+                <label class="tableLable">In</label>
+                <input type="text" class="timepicker tableInput" id="tueIn{{id}}">
+                <label class="tableLable">Out</label>
+                <input type="text" class="timepicker tableInput" id="tueOut{{id}}">
             </td>
+            {{else}}
+            <td></td>
+            {{/if}}
+            {{#if wednesdayAvailable}}
             <td>
-                {{#if User.sundayAvilable}}
-                inputs
-                  <label>In</label>
-                  <input type="text" class="timepicker">
-                  <label>Out</label>
-                  <input type="text" class="timepicker">
-                {{/if}}
+                <label class="tableLable">In</label>
+                <input type="text" class="timepicker tableInput" id="wedIn{{id}}">
+                <label class="tableLable">Out</label>
+                <input type="text" class="timepicker tableInput" id="wedOut{{id}}">
             </td>
+            {{else}}
+            <td></td>
+            {{/if}}
+
+            {{#if thursdayAvailable}}
             <td>
-                {{#if User.mondayAvilable}}
-                inputs
-                <label>In</label>
-                <input type="text" class="timepicker">
-                <label>Out</label>
-                <input type="text" class="timepicker">
-                {{/if}}
+                <label class="tableLable">In</label>
+                <input type="text" class="timepicker tableInput" id="thurIn{{id}}">
+                <label class="tableLable">Out</label>
+                <input type="text" class="timepicker tableInput" id="thurOut{{id}}">
             </td>
+            {{else}}
+            <td></td>
+            {{/if}}
+
+            {{#if fridayAvailable}}
             <td>
-                {{#if User.tuesdayAvilable}}
-                inputs
-                <label>In</label>
-                <input type="text" class="timepicker">
-                <label>Out</label>
-                <input type="text" class="timepicker">
-                {{/if}}
+                <label class="tableLable">In</label>
+                <input type="text" class="timepicker tableInput" id="friIn{{id}}">
+                <label class="tableLable">Out</label>
+                <input type="text" class="timepicker tableInput" id="friOut{{id}}">
             </td>
+            {{else}}
+            <td></td>
+            {{/if}}
+
+            {{#if saturdayAvailable}}
             <td>
-                {{#if User.wednesdayAvilable}}
-                inputs
-                <label>In</label>
-                <input type="text" class="timepicker">
-                <label>Out</label>
-                <input type="text" class="timepicker">
-                {{/if}}
+                <label class="tableLable">In</label>
+                <input type="text" class="timepicker tableInput" id="satIn{{id}}">
+                <label class="tableLable">Out</label>
+                <input type="text" class="timepicker tableInput" id="satOut{{id}}">
             </td>
-            <td>
-                {{#if User.thursdayAvilable}}
-                inputs
-                <label>In</label>
-                <input type="text" class="timepicker">
-                <label>Out</label>
-                <input type="text" class="timepicker">
-                {{/if}}
-            </td>
-            <td>
-                {{#if User.fridayAvilable}}
-                inputs
-                <label>In</label>
-                <input type="text" class="timepicker">
-                <label>Out</label>
-                <input type="text" class="timepicker">
-                {{/if}}
-            </td>
-            <td>
-                {{#if User.saturdayAvilable}}
-                inputs
-                <label>In</label>
-                <input type="text" class="timepicker">
-                <label>Out</label>
-                <input type="text" class="timepicker">
-                {{/if}}
-            </td>
+            {{else}}
+            <td></td>
+            {{/if}}
         </tr>
         {{/each}}
-        </table>
-    </div>  --}}
 
-
-    <table class="container">
-            <thead>
-                <tr>
-                    <th>Employee Name</th>
-                    <th>Employee Total hours</th>
-                    <th>Sunday</th>
-                    <th>Monday</th>
-                    <th>Tuesday</th>
-                    <th>Wednesday</th>
-                    <th>Thursday</th>
-                    <th>Friday</th>
-                    <th>Saturday</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Leslie Knope</td>
-                    <td>32</td>
-                    <td>
-                      <label>In</label>
-                      <input type="text" class="timepicker">
-                      <label>Out</label>
-                      <input type="text" class="timepicker">
-                    </td>
-                    <td>
-                        <p class="inOut">
-                        <label>In</label> 
-                        <input type="text">
-                        </p>
-                        <p class="inOut">
-                        <label>Out</label> 
-                        <input type="text">
-                        </p>
-                    </td>
-                    <td>
-                        <p class="inOut">
-                        <label>In</label> 
-                        <input type="text">
-                        </p>
-                        <p class="inOut">
-                        <label>Out</label> 
-                        <input type="text">
-                        </p>
-                    </td>
-                    <td>
-                        <p class="inOut">
-                        <label>In</label> 
-                        <input type="text">
-                        </p>
-                        <p class="inOut">
-                        <label>Out</label> 
-                        <input type="text">
-                        </p>
-                    </td>
-                    <td>
-                        <p class="inOut">
-                        <label>In</label> 
-                        <input type="text">
-                        </p>
-                        <p class="inOut">
-                        <label>Out</label> 
-                        <input type="text">
-                        </p>
-                    </td>
-                    <td>
-                        <p class="inOut">
-                        <label>In</label> 
-                        <input type="text">
-                        </p>
-                        <p class="inOut">
-                        <label>Out</label> 
-                        <input type="text">
-                        </p>
-                    </td>
-                    <td>
-                        <p class="inOut">
-                        <label>In</label> 
-                        <input type="text">
-                        </p>
-                        <p class="inOut">
-                        <label>Out</label> 
-                        <input type="text">
-                        </p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Ron Swanson</td>
-                    <td>32</td>
-                    <td>
-                        <p class="inOut">
-                        <label>In</label> 
-                        <input type="text">
-                        </p>
-                        <p class="inOut">
-                        <label>Out</label> 
-                        <input type="text">
-                        </p>
-                    </td>
-                    <td>
-                        <p class="inOut">
-                        <label>In</label> 
-                        <input type="text">
-                        </p>
-                        <p class="inOut">
-                        <label>Out</label> 
-                        <input type="text">
-                        </p>
-                    </td>
-                    <td>
-                        <p class="inOut">
-                        <label>In</label> 
-                        <input type="text">
-                        </p>
-                        <p class="inOut">
-                        <label>Out</label> 
-                        <input type="text">
-                        </p>
-                    </td>
-                    <td>
-                        <p class="inOut">
-                        <label>In</label> 
-                        <input type="text">
-                        </p>
-                        <p class="inOut">
-                        <label>Out</label> 
-                        <input type="text">
-                        </p>
-                    </td>
-                    <td>
-                        <p class="inOut">
-                        <label>In</label> 
-                        <input type="text">
-                        </p>
-                        <p class="inOut">
-                        <label>Out</label> 
-                        <input type="text">
-                        </p>
-                    </td>
-                    <td>
-                        <p class="inOut">
-                        <label>In</label> 
-                        <input type="text">
-                        </p>
-                        <p class="inOut">
-                        <label>Out</label> 
-                        <input type="text">
-                        </p>
-                    </td>
-                    <td>
-                        <p class="inOut">
-                        <label>In</label> 
-                        <input type="text">
-                        </p>
-                        <p class="inOut">
-                        <label>Out</label> 
-                        <input type="text">
-                        </p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Tom Haverford</td>
-                    <td>32</td>
-                    <td>
-                        <p class="inOut">
-                        <label>In</label> 
-                        <input type="text">
-                        </p>
-                        <p class="inOut">
-                        <label>Out</label> 
-                        <input type="text">
-                        </p>
-                    </td>
-                    <td>
-                        <p class="inOut">
-                        <label>In</label> 
-                        <input type="text">
-                        </p>
-                        <p class="inOut">
-                        <label>Out</label> 
-                        <input type="text">
-                        </p>
-                    </td>
-                    <td>
-                        <p class="inOut">
-                        <label>In</label> 
-                        <input type="text">
-                        </p>
-                        <p class="inOut">
-                        <label>Out</label> 
-                        <input type="text">
-                        </p>
-                    </td>
-                    <td>
-                        <p class="inOut">
-                        <label>In</label> 
-                        <input type="text">
-                        </p>
-                        <p class="inOut">
-                        <label>Out</label> 
-                        <input type="text">
-                        </p>
-                    </td>
-                    <td>
-                        <p class="inOut">
-                        <label>In</label> 
-                        <input type="text">
-                        </p>
-                        <p class="inOut">
-                        <label>Out</label> 
-                        <input type="text">
-                        </p>
-                    </td>
-                    <td>
-                        <p class="inOut">
-                        <label>In</label> 
-                        <input type="text">
-                        </p>
-                        <p class="inOut">
-                        <label>Out</label> 
-                        <input type="text">
-                        </p>
-                    </td>
-                    <td>
-                        <p class="inOut">
-                        <label>In</label> 
-                        <input type="text">
-                        </p>
-                        <p class="inOut">
-                        <label>Out</label> 
-                        <input type="text">
-                        </p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Jean-Ralphio</td>
-                    <td>32</td>
-                    <td>
-                        <p class="inOut">
-                        <label>In</label> 
-                        <input type="text">
-                        </p>
-                        <p class="inOut">
-                        <label>Out</label> 
-                        <input type="text">
-                        </p>
-                    </td>
-                    <td>
-                        <p class="inOut">
-                        <label>In</label> 
-                        <input type="text">
-                        </p>
-                        <p class="inOut">
-                        <label>Out</label> 
-                        <input type="text">
-                        </p>
-                    </td>
-                    <td>
-                        <p class="inOut">
-                        <label>In</label> 
-                        <input type="text">
-                        </p>
-                        <p class="inOut">
-                        <label>Out</label> 
-                        <input type="text">
-                        </p>
-                    </td>
-                    <td>
-                        <p class="inOut">
-                        <label>In</label> 
-                        <input type="text">
-                        </p>
-                        <p class="inOut">
-                        <label>Out</label> 
-                        <input type="text">
-                        </p>
-                    </td>
-                    <td>
-                        <p class="inOut">
-                        <label>In</label> 
-                        <input type="text">
-                        </p>
-                        <p class="inOut">
-                        <label>Out</label> 
-                        <input type="text">
-                        </p>
-                    </td>
-                    <td>
-                        <p class="inOut">
-                        <label>In</label> 
-                        <input type="text">
-                        </p>
-                        <p class="inOut">
-                        <label>Out</label> 
-                        <input type="text">
-                        </p>
-                    </td>
-                    <td>
-                        <p class="inOut">
-                        <label>In</label> 
-                        <input type="text">
-                        </p>
-                        <p class="inOut">
-                        <label>Out</label> 
-                        <input type="text">
-                        </p>
-                    </td>
-                </tr>
-                             
-            </tbody>
-        </table>
+    </tbody>
+</table>
 
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
 <script>
-$("body").css("background-image", "url('../images/ySLiJ.jpg')");
-  const timer = document.querySelector('.timepicker');
-  M.Timepicker.init(timer,{});
+    $("body").css("background-image", "url('../images/ySLiJ.jpg')");
+    const timer = document.querySelector('.timepicker');
+    M.Timepicker.init(timer, {});
+
+    window.onscroll = function () { headerStick() };
+
+    var header = document.getElementById("tableHead");
+    var sticky = header.offsetTop;
+
+    function headerStick() {
+        if (window.pageYOffset > sticky) {
+            header.classList.add("sticky");
+        } else {
+            header.classList.remove("sticky");
+        }
+    }
+
 </script>

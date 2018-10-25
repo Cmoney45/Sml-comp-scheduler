@@ -151,11 +151,11 @@ body {
 /*-------End of adduser page-------*/
 
 /* Begin table page */
-input {
+.tableInput {
   width: 65px;
 }
 
-label {
+.tableLabel {
   padding-right: 0;
 }
 
@@ -178,7 +178,12 @@ td {
 tr th {
   color: #000000;
 }
-
+.sticky {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  box-shadow: 2px 5px 8px rgb(155, 153, 153); 
+}
 /* h1 {
 font-size:3em; 
 font-weight: 300;
