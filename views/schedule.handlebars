@@ -1,0 +1,85 @@
+<table class="container">
+    <thead>
+        <tr id="tableHead">
+            <th>Employee Name</th>
+            <th>Employee Total hours</th>
+            <th>Sunday</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+            <th>Saturday</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr id="{{id}}">
+            <td> {{userLastName}}, {{userFirstName}}</td>
+
+            {{#if sundayAvailable}}
+            <td>
+                <label class="tableLable">Hours to Work</label>
+                <p>{{schedule.scheduledBeginHour}} - {{scheduledEndHour}}</p>
+            </td>
+            {{else}}
+            <td></td>
+            {{/if}}
+
+            {{#if mondayAvailable}}
+            <td>
+                <label class="tableLable">Hours to Work</label>
+                <p>{{schedule.scheduledBeginHour}} - {{scheduledEndHour}}</p>
+            </td>
+            {{else}}
+            <td></td>
+            {{/if}}
+
+            {{#if tuesdayAvailable}}
+            <td>
+                <label class="tableLable">Hours to Work</label>
+                <p>{{schedule.scheduledBeginHour}} - {{scheduledEndHour}}</p>
+            </td>
+            {{else}}
+            <td></td>
+            {{/if}}
+            {{#if wednesdayAvailable}}
+            <td>
+                <label class="tableLable">Hours to Work</label>
+                <p>{{schedule.scheduledBeginHour}} - {{scheduledEndHour}}</p>
+            </td>
+            {{else}}
+            <td></td>
+            {{/if}}
+
+            {{#if thursdayAvailable}}
+            <td>
+                <label class="tableLable">Hours to Work</label>
+                <p>{{schedule.scheduledBeginHour}} - {{scheduledEndHour}}</p>
+            </td>
+            {{else}}
+            <td></td>
+            {{/if}}
+
+            {{#if fridayAvailable}}
+            <td>
+                <label class="tableLable">Hours to Work</label>
+                <p>{{schedule.scheduledBeginHour}} - {{scheduledEndHour}}</p>
+            </td>
+            {{else}}
+            <td></td>
+            {{/if}}
+
+            {{#if saturdayAvailable}}
+            <td>
+                <label class="tableLable">Hours to Work</label>
+                <p>{{schedule.scheduledBeginHour}} - {{scheduledEndHour}}</p>
+            </td>
+            {{else}}
+            <td></td>
+            {{/if}}
+        </tr>
+        {{/each}}
+
+    </tbody>
+</table>

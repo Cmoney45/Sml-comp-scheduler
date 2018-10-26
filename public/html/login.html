@@ -42,6 +42,10 @@
                       <input type="reset" id="reset" class="btn-flat grey-text waves-effect">
                       <input type="submit" class="btn green waves-effect waves-light" value="Login">
                 </div>
+
+                <div>
+                    <input type="text" class="timepicker">
+                </div>
             </form>
         </div>
     </div>
@@ -52,6 +56,11 @@
     $("#reset").on("click", function() {
         $('label').removeClass('active');
     });
+
+    $(document).ready(function(){
+    $('.timepicker').timepicker();
+  });
+      
 </script>
 
 </html>

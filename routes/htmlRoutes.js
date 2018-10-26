@@ -23,6 +23,12 @@ module.exports = app => {
     res.render("login");
   });
 
+  app.get("/schedule", (req, res) => {
+    res.render("schedule", {
+      schedule: Schedule
+    });
+  });
+
   // Render the index page for any unmatched routes
   app.get("*", (req, res) => {
     db.User.findAll({}).then(User => {
