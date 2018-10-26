@@ -8,6 +8,18 @@ module.exports = app => {
     });
   });
 
+  // Get specific Schedule for a user
+  app.get("/api/user/:UserId/scheduler/", (req, res) => {
+    const { UserId } = req.params;
+
+    db.Scheduler.findAll({
+      where: { UserId },
+      include: [db.User]
+    }).then(dbSchedulerUnique => {
+      res.json(dbSchedulerUnique);
+    });
+  });
+
   // Get specific Scheduler
   app.get("/api/scheduler/:id", (req, res) => {
     const { id } = req.params;
@@ -26,7 +38,7 @@ module.exports = app => {
     });
   });
 
-  // Delete an example by id
+  // Delete a Scheudled Date by id
   app.delete("/api/Scheduler/:id", (req, res) => {
     const { id } = req.params;
 

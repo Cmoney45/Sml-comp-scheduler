@@ -35,7 +35,7 @@ module.exports = app => {
   });
 
   // Get specific Company Users
-  app.get("/api/users/:CompanyId", (req, res) => {
+  app.get("/api/company/:CompanyId/users", (req, res) => {
     const { CompanyId } = req.params;
 
     db.User.findAll({

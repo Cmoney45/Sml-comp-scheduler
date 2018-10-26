@@ -3,9 +3,11 @@ const db = require("../models");
 module.exports = app => {
   // Load index page
   app.get("/", (req, res) => {
-    db.User.findAll({}).then(User => {
+    // console.log(req);
+    db.User.findAll({
+      where: {}
+    }).then(User => {
       res.render("index", {
-        msg: "Welcome!",
         users: User
       });
     });
