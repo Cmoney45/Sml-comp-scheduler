@@ -9,7 +9,7 @@ module.exports = app => {
     console.log(CompanyId, isManager, id);
 
     if (isManager === true) {
-      console.log(isManager === true)
+      console.log(isManager === true);
       db.User.findAll({
         where: { CompanyId }
       }).then(User => {
@@ -18,7 +18,7 @@ module.exports = app => {
         });
       });
     } else {
-      console.log(isManager === true)
+      console.log(isManager === true);
       db.User.findOne({
         where: { id, CompanyId }
       }).then(User => {
