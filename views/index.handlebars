@@ -2,7 +2,7 @@
     <thead>
         <tr id="tableHead">
             <th>Employee Name</th>
-            <th>Employee Total hours</th>
+            <th>Post Hours</th>
             <th>Sunday</th>
             <th>Monday</th>
             <th>Tuesday</th>
@@ -14,16 +14,66 @@
     </thead>
     <tbody>
         {{#each users }}
-        <tr id="{{id}}">
-            <td>{{userLastName}}, {{userFirstName}}</td>
-            <td class="totalHours"></td>
+        <tr>
+            <td id="name{{id}}">{{userLastName}}, {{userFirstName}}</td>
+            <td>
+                <button class="post" id={{id}}>
+                    Post
+                </button>
+            </td>
 
             {{#if sundayAvailable}}
             <td>
-                <label class="tableLable">In</label>
-                <input type="text" class="timepicker tableInput" id="sunIn{{id}}">
-                <label class="tableLable">Out</label>
-                <input type="text" class="timepicker tableInput" id="sunOut{{id}}">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text tableLable" >In</label>
+                    </div>
+                    <select class="custom-select" id="sunIn{{id}}">
+                        <option value="-">-:--</option>
+                        <option value="6:00 am">6:00</option>
+                        <option value="7:00 am">7:00</option>
+                        <option value="8:00 am">8:00</option>
+                        <option value="9:00 am">9:00</option>
+                        <option value="10:00 am">10:00</option>
+                        <option value="11:00 am">11:00</option>
+                        <option value="12:00 pm">12:00</option>
+                        <option value="1:00 pm">1:00</option>
+                        <option value="2:00 pm">2:00</option>
+                        <option value="3:00 pm">3:00</option>
+                        <option value="4:00 pm">4:00</option>
+                        <option value="5:00 pm">5:00</option>
+                        <option value="6:00 pm">6:00</option>
+                        <option value="7:00 pm">7:00</option>
+                        <option value="8:00 pm">8:00</option>
+                        <option value="9:00 pm">9:00</option>
+                        <option value="10:00 pm">10:00</option>
+                    </select>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text tableLable" >Out</label>
+                    </div>
+                    <select class="custom-select" id="sunOut{{id}}">
+                        <option value="-">-:--</option>
+                        <option value="6:00 am">6:00</option>
+                        <option value="7:00 am">7:00</option>
+                        <option value="8:00 am">8:00</option>
+                        <option value="9:00 am">9:00</option>
+                        <option value="10:00 am">10:00</option>
+                        <option value="11:00 am">11:00</option>
+                        <option value="12:00 pm">12:00</option>
+                        <option value="1:00 pm">1:00</option>
+                        <option value="2:00 pm">2:00</option>
+                        <option value="3:00 pm">3:00</option>
+                        <option value="4:00 pm">4:00</option>
+                        <option value="5:00 pm">5:00</option>
+                        <option value="6:00 pm">6:00</option>
+                        <option value="7:00 pm">7:00</option>
+                        <option value="8:00 pm">8:00</option>
+                        <option value="9:00 pm">9:00</option>
+                        <option value="10:00 pm">10:00</option>
+                    </select>
+                </div>
             </td>
             {{else}}
             <td></td>
@@ -31,10 +81,56 @@
 
             {{#if mondayAvailable}}
             <td>
-                <label class="tableLable">In</label>
-                <input type="text" class="timepicker tableInput" id="monIn{{id}}">
-                <label class="tableLable">Out</label>
-                <input type="text" class="timepicker tableInput" id="monOut{{id}}">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text tableLable" >In</label>
+                    </div>
+                    <select class="custom-select" id="monIn{{id}}">
+                        <option value="-">-:--</option>
+                        <option value="6:00 am">6:00</option>
+                        <option value="7:00 am">7:00</option>
+                        <option value="8:00 am">8:00</option>
+                        <option value="9:00 am">9:00</option>
+                        <option value="10:00 am">10:00</option>
+                        <option value="11:00 am">11:00</option>
+                        <option value="12:00 pm">12:00</option>
+                        <option value="1:00 pm">1:00</option>
+                        <option value="2:00 pm">2:00</option>
+                        <option value="3:00 pm">3:00</option>
+                        <option value="4:00 pm">4:00</option>
+                        <option value="5:00 pm">5:00</option>
+                        <option value="6:00 pm">6:00</option>
+                        <option value="7:00 pm">7:00</option>
+                        <option value="8:00 pm">8:00</option>
+                        <option value="9:00 pm">9:00</option>
+                        <option value="10:00 pm">10:00</option>
+                    </select>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text tableLable" >Out</label>
+                    </div>
+                    <select class="custom-select" id="monOut{{id}}">
+                        <option value="-">-:--</option>
+                        <option value="6:00 am">6:00</option>
+                        <option value="7:00 am">7:00</option>
+                        <option value="8:00 am">8:00</option>
+                        <option value="9:00 am">9:00</option>
+                        <option value="10:00 am">10:00</option>
+                        <option value="11:00 am">11:00</option>
+                        <option value="12:00 pm">12:00</option>
+                        <option value="1:00 pm">1:00</option>
+                        <option value="2:00 pm">2:00</option>
+                        <option value="3:00 pm">3:00</option>
+                        <option value="4:00 pm">4:00</option>
+                        <option value="5:00 pm">5:00</option>
+                        <option value="6:00 pm">6:00</option>
+                        <option value="7:00 pm">7:00</option>
+                        <option value="8:00 pm">8:00</option>
+                        <option value="9:00 pm">9:00</option>
+                        <option value="10:00 pm">10:00</option>
+                    </select>
+                </div>
             </td>
             {{else}}
             <td></td>
@@ -42,20 +138,112 @@
 
             {{#if tuesdayAvailable}}
             <td>
-                <label class="tableLable">In</label>
-                <input type="text" class="timepicker tableInput" id="tueIn{{id}}">
-                <label class="tableLable">Out</label>
-                <input type="text" class="timepicker tableInput" id="tueOut{{id}}">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text tableLable" >In</label>
+                    </div>
+                    <select class="custom-select" id="tueIn{{id}}">
+                        <option value="-">-:--</option>
+                        <option value="6:00 am">6:00</option>
+                        <option value="7:00 am">7:00</option>
+                        <option value="8:00 am">8:00</option>
+                        <option value="9:00 am">9:00</option>
+                        <option value="10:00 am">10:00</option>
+                        <option value="11:00 am">11:00</option>
+                        <option value="12:00 pm">12:00</option>
+                        <option value="1:00 pm">1:00</option>
+                        <option value="2:00 pm">2:00</option>
+                        <option value="3:00 pm">3:00</option>
+                        <option value="4:00 pm">4:00</option>
+                        <option value="5:00 pm">5:00</option>
+                        <option value="6:00 pm">6:00</option>
+                        <option value="7:00 pm">7:00</option>
+                        <option value="8:00 pm">8:00</option>
+                        <option value="9:00 pm">9:00</option>
+                        <option value="10:00 pm">10:00</option>
+                    </select>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text tableLable" >Out</label>
+                    </div>
+                    <select class="custom-select" id="tueOut{{id}}">
+                        <option value="-">-:--</option>
+                        <option value="6:00 am">6:00</option>
+                        <option value="7:00 am">7:00</option>
+                        <option value="8:00 am">8:00</option>
+                        <option value="9:00 am">9:00</option>
+                        <option value="10:00 am">10:00</option>
+                        <option value="11:00 am">11:00</option>
+                        <option value="12:00 pm">12:00</option>
+                        <option value="1:00 pm">1:00</option>
+                        <option value="2:00 pm">2:00</option>
+                        <option value="3:00 pm">3:00</option>
+                        <option value="4:00 pm">4:00</option>
+                        <option value="5:00 pm">5:00</option>
+                        <option value="6:00 pm">6:00</option>
+                        <option value="7:00 pm">7:00</option>
+                        <option value="8:00 pm">8:00</option>
+                        <option value="9:00 pm">9:00</option>
+                        <option value="10:00 pm">10:00</option>
+                    </select>
+                </div>
             </td>
             {{else}}
             <td></td>
             {{/if}}
             {{#if wednesdayAvailable}}
             <td>
-                <label class="tableLable">In</label>
-                <input type="text" class="timepicker tableInput" id="wedIn{{id}}">
-                <label class="tableLable">Out</label>
-                <input type="text" class="timepicker tableInput" id="wedOut{{id}}">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text tableLable" >In</label>
+                    </div>
+                    <select class="custom-select" id="wedIn{{id}}">
+                        <option value="-">-:--</option>
+                        <option value="6:00 am">6:00</option>
+                        <option value="7:00 am">7:00</option>
+                        <option value="8:00 am">8:00</option>
+                        <option value="9:00 am">9:00</option>
+                        <option value="10:00 am">10:00</option>
+                        <option value="11:00 am">11:00</option>
+                        <option value="12:00 pm">12:00</option>
+                        <option value="1:00 pm">1:00</option>
+                        <option value="2:00 pm">2:00</option>
+                        <option value="3:00 pm">3:00</option>
+                        <option value="4:00 pm">4:00</option>
+                        <option value="5:00 pm">5:00</option>
+                        <option value="6:00 pm">6:00</option>
+                        <option value="7:00 pm">7:00</option>
+                        <option value="8:00 pm">8:00</option>
+                        <option value="9:00 pm">9:00</option>
+                        <option value="10:00 pm">10:00</option>
+                    </select>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text tableLable" >Out</label>
+                    </div>
+                    <select class="custom-select" id="wedOut{{id}}">
+                        <option value="-">-:--</option>
+                        <option value="6:00 am">6:00</option>
+                        <option value="7:00 am">7:00</option>
+                        <option value="8:00 am">8:00</option>
+                        <option value="9:00 am">9:00</option>
+                        <option value="10:00 am">10:00</option>
+                        <option value="11:00 am">11:00</option>
+                        <option value="12:00 pm">12:00</option>
+                        <option value="1:00 pm">1:00</option>
+                        <option value="2:00 pm">2:00</option>
+                        <option value="3:00 pm">3:00</option>
+                        <option value="4:00 pm">4:00</option>
+                        <option value="5:00 pm">5:00</option>
+                        <option value="6:00 pm">6:00</option>
+                        <option value="7:00 pm">7:00</option>
+                        <option value="8:00 pm">8:00</option>
+                        <option value="9:00 pm">9:00</option>
+                        <option value="10:00 pm">10:00</option>
+                    </select>
+                </div>
             </td>
             {{else}}
             <td></td>
@@ -63,10 +251,56 @@
 
             {{#if thursdayAvailable}}
             <td>
-                <label class="tableLable">In</label>
-                <input type="text" class="timepicker tableInput" id="thurIn{{id}}">
-                <label class="tableLable">Out</label>
-                <input type="text" class="timepicker tableInput" id="thurOut{{id}}">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text tableLable" >In</label>
+                    </div>
+                    <select class="custom-select" id="thurIn{{id}}">
+                        <option value="-">-:--</option>
+                        <option value="6:00 am">6:00</option>
+                        <option value="7:00 am">7:00</option>
+                        <option value="8:00 am">8:00</option>
+                        <option value="9:00 am">9:00</option>
+                        <option value="10:00 am">10:00</option>
+                        <option value="11:00 am">11:00</option>
+                        <option value="12:00 pm">12:00</option>
+                        <option value="1:00 pm">1:00</option>
+                        <option value="2:00 pm">2:00</option>
+                        <option value="3:00 pm">3:00</option>
+                        <option value="4:00 pm">4:00</option>
+                        <option value="5:00 pm">5:00</option>
+                        <option value="6:00 pm">6:00</option>
+                        <option value="7:00 pm">7:00</option>
+                        <option value="8:00 pm">8:00</option>
+                        <option value="9:00 pm">9:00</option>
+                        <option value="10:00 pm">10:00</option>
+                    </select>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text tableLable" >Out</label>
+                    </div>
+                    <select class="custom-select" id="thurOut{{id}}">
+                        <option value="-">-:--</option>
+                        <option value="6:00 am">6:00</option>
+                        <option value="7:00 am">7:00</option>
+                        <option value="8:00 am">8:00</option>
+                        <option value="9:00 am">9:00</option>
+                        <option value="10:00 am">10:00</option>
+                        <option value="11:00 am">11:00</option>
+                        <option value="12:00 pm">12:00</option>
+                        <option value="1:00 pm">1:00</option>
+                        <option value="2:00 pm">2:00</option>
+                        <option value="3:00 pm">3:00</option>
+                        <option value="4:00 pm">4:00</option>
+                        <option value="5:00 pm">5:00</option>
+                        <option value="6:00 pm">6:00</option>
+                        <option value="7:00 pm">7:00</option>
+                        <option value="8:00 pm">8:00</option>
+                        <option value="9:00 pm">9:00</option>
+                        <option value="10:00 pm">10:00</option>
+                    </select>
+                </div>
             </td>
             {{else}}
             <td></td>
@@ -74,10 +308,56 @@
 
             {{#if fridayAvailable}}
             <td>
-                <label class="tableLable">In</label>
-                <input type="text" class="timepicker tableInput" id="friIn{{id}}">
-                <label class="tableLable">Out</label>
-                <input type="text" class="timepicker tableInput" id="friOut{{id}}">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text tableLable" >In</label>
+                    </div>
+                    <select class="custom-select" id="friIn{{id}}">
+                        <option value="-">-:--</option>
+                        <option value="6:00 am">6:00</option>
+                        <option value="7:00 am">7:00</option>
+                        <option value="8:00 am">8:00</option>
+                        <option value="9:00 am">9:00</option>
+                        <option value="10:00 am">10:00</option>
+                        <option value="11:00 am">11:00</option>
+                        <option value="12:00 pm">12:00</option>
+                        <option value="1:00 pm">1:00</option>
+                        <option value="2:00 pm">2:00</option>
+                        <option value="3:00 pm">3:00</option>
+                        <option value="4:00 pm">4:00</option>
+                        <option value="5:00 pm">5:00</option>
+                        <option value="6:00 pm">6:00</option>
+                        <option value="7:00 pm">7:00</option>
+                        <option value="8:00 pm">8:00</option>
+                        <option value="9:00 pm">9:00</option>
+                        <option value="10:00 pm">10:00</option>
+                    </select>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text tableLable" >Out</label>
+                    </div>
+                    <select class="custom-select" id="friOut{{id}}">
+                        <option value="-">-:--</option>
+                        <option value="6:00 am">6:00</option>
+                        <option value="7:00 am">7:00</option>
+                        <option value="8:00 am">8:00</option>
+                        <option value="9:00 am">9:00</option>
+                        <option value="10:00 am">10:00</option>
+                        <option value="11:00 am">11:00</option>
+                        <option value="12:00 pm">12:00</option>
+                        <option value="1:00 pm">1:00</option>
+                        <option value="2:00 pm">2:00</option>
+                        <option value="3:00 pm">3:00</option>
+                        <option value="4:00 pm">4:00</option>
+                        <option value="5:00 pm">5:00</option>
+                        <option value="6:00 pm">6:00</option>
+                        <option value="7:00 pm">7:00</option>
+                        <option value="8:00 pm">8:00</option>
+                        <option value="9:00 pm">9:00</option>
+                        <option value="10:00 pm">10:00</option>
+                    </select>
+                </div>
             </td>
             {{else}}
             <td></td>
@@ -85,10 +365,56 @@
 
             {{#if saturdayAvailable}}
             <td>
-                <label class="tableLable">In</label>
-                <input type="text" class="timepicker tableInput" id="satIn{{id}}">
-                <label class="tableLable">Out</label>
-                <input type="text" class="timepicker tableInput" id="satOut{{id}}">
+               <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text tableLable" >In</label>
+                    </div>
+                    <select class="custom-select" id="satIn{{id}}">
+                        <option value="-">-:--</option>
+                        <option value="6:00 am">6:00</option>
+                        <option value="7:00 am">7:00</option>
+                        <option value="8:00 am">8:00</option>
+                        <option value="9:00 am">9:00</option>
+                        <option value="10:00 am">10:00</option>
+                        <option value="11:00 am">11:00</option>
+                        <option value="12:00 pm">12:00</option>
+                        <option value="1:00 pm">1:00</option>
+                        <option value="2:00 pm">2:00</option>
+                        <option value="3:00 pm">3:00</option>
+                        <option value="4:00 pm">4:00</option>
+                        <option value="5:00 pm">5:00</option>
+                        <option value="6:00 pm">6:00</option>
+                        <option value="7:00 pm">7:00</option>
+                        <option value="8:00 pm">8:00</option>
+                        <option value="9:00 pm">9:00</option>
+                        <option value="10:00 pm">10:00</option>
+                    </select>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text tableLable" >Out</label>
+                    </div>
+                    <select class="custom-select" id="satOut{{id}}">
+                        <option value="-">-:--</option>
+                        <option value="6:00 am">6:00</option>
+                        <option value="7:00 am">7:00</option>
+                        <option value="8:00 am">8:00</option>
+                        <option value="9:00 am">9:00</option>
+                        <option value="10:00 am">10:00</option>
+                        <option value="11:00 am">11:00</option>
+                        <option value="12:00 pm">12:00</option>
+                        <option value="1:00 pm">1:00</option>
+                        <option value="2:00 pm">2:00</option>
+                        <option value="3:00 pm">3:00</option>
+                        <option value="4:00 pm">4:00</option>
+                        <option value="5:00 pm">5:00</option>
+                        <option value="6:00 pm">6:00</option>
+                        <option value="7:00 pm">7:00</option>
+                        <option value="8:00 pm">8:00</option>
+                        <option value="9:00 pm">9:00</option>
+                        <option value="10:00 pm">10:00</option>
+                    </select>
+                </div>
             </td>
             {{else}}
             <td></td>
@@ -104,20 +430,51 @@
 <script src="/js/index.js"></script>
 <script>
     $("body").css("background-image", "url('../images/ySLiJ.jpg')");
-    const timer = document.querySelector('.timepicker');
-    M.Timepicker.init(timer, {});
+    $(".container").css("width", "85%");
+    $(document).ready(function () {
+   
+        // sticky header
+        window.onscroll = function () { headerStick() };
 
-    window.onscroll = function () { headerStick() };
+        var header = document.getElementById("tableHead");
+        var sticky = header.offsetTop;
 
-    var header = document.getElementById("tableHead");
-    var sticky = header.offsetTop;
-
-    function headerStick() {
-        if (window.pageYOffset > sticky) {
-            header.classList.add("sticky");
-        } else {
-            header.classList.remove("sticky");
+        function headerStick() {
+            if (window.pageYOffset > sticky) {
+                header.classList.add("sticky");
+            } else {
+                header.classList.remove("sticky");
+            }
         }
-    }
+   
+            // Post Button
+        $(document).on("click", ".post", () => {
+            let id = $(this)[0].activeElement.id
+            let newPost = {
+                name: $(`#name${id}`).text(),
+                sunStart: $(`#sunIn${id}`).val(),
+                sunEnd: $(`#sunOut${id}`).val(),
+                monStart: $(`#monIn${id}`).val(),
+                monEnd: $(`#monOut${id}`).val(),
+                tueStart: $(`#tueIn${id}`).val(),
+                tueEnd: $(`#tueOut${id}`).val(),
+                wedStart: $(`#wedIn${id}`).val(),
+                wedEnd: $(`#wedOut${id}`).val(),
+                thurStart: $(`#thurIn${id}`).val(),
+                thurEnd: $(`#thurOut${id}`).val(),
+                friStart: $(`#friIn${id}`).val(),
+                friEnd: $(`#friOut${id}`).val(),
+                satStart: $(`#satIn${id}`).val(),
+                satEnd:$(`#satOut${id}`).val()
+                }
+                console.log(newPost);
+                submitNewSchedule();
+        });
+        const submitNewSchedule = newPost => {
+            $.post("/api/scheduler/", newPost, () => {
+                console.log("posted");
+            });
+        };
+    });
 
 </script>

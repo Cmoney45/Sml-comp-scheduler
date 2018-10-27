@@ -41,8 +41,10 @@ module.exports = app => {
   });
 
   app.get("/schedule", (req, res) => {
-    res.render("schedule", {
-      schedule: Schedule
+    db.Scheduler.findAll({}).then(Scheduler => {
+      res.render("schedule", {
+        schedule: Scheduler
+      });
     });
   });
 

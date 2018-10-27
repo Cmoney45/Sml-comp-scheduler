@@ -16,15 +16,3 @@
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="js/login.js"></script>
-<script>
-
-$("#submit").on("click", event => {
-  event.preventDefault();
-  if ($("#username").val() === "bob" && $("#password").val() === "saget") {
-      $.get("/",(req, res) =>{
-        res.render("index"); 
-      })
-    }
-});
-
-</script>

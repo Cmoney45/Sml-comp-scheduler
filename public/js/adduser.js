@@ -18,7 +18,9 @@ $(() => {
       const addInput = $(
         "<input type='checkbox' class='custom-control-input' id=''>"
       );
-      const addLable = $("<label class='custom-control-label' for=''>").text(day);
+      const addLable = $("<label class='custom-control-label' for=''>").text(
+        day
+      );
       addInput.attr({ id: `customCheck${num}` });
       addLable.attr({ for: `customCheck${num}` });
       addDiv.append(addInput);
@@ -54,7 +56,6 @@ $(() => {
       fridayAvailable: $("#customCheck6").is(":checked"),
       saturdayAvailable: $("#customCheck7").is(":checked")
     };
-    console.log(newUser);
     submitNewUser(newUser);
   });
 
