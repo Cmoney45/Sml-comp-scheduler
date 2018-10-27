@@ -6,9 +6,9 @@ $(() => {
 
     $.get(`/api/users/${userAccount}`, data => {
       if (data != null && data.userAccount === userAccount && data.userPassword === password) {
-        localStorage.setItem("userID", data.id)
-        localStorage.setItem("isManager", data.isManager)
-        localStorage.setItem("CompanyId", data.CompanyId)
+        localStorage.setItem("userID", data.id);
+        localStorage.setItem("isManager", data.isManager);
+        localStorage.setItem("CompanyId", data.CompanyId);
 
         let userInfo = {
           userID: localStorage.getItem("userID"),
