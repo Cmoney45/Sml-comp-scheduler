@@ -15,10 +15,10 @@
     <tbody>
         {{#each users }}
         <tr>
-            <td>{{userLastName}}, {{userFirstName}}</td>
+            <td id="name{{id}}">{{userLastName}}, {{userFirstName}}</td>
             <td>
-                <button class="post" id="{{id}}">
-                    total
+                <button class="post" id={{id}}>
+                    Post
                 </button>
             </td>
 
@@ -430,6 +430,7 @@
 <script src="/js/index.js"></script>
 <script>
     $("body").css("background-image", "url('../images/ySLiJ.jpg')");
+    $(".container").css("width", "85%");
     $(document).ready(function () {
    
         // sticky header
@@ -445,10 +446,35 @@
                 header.classList.remove("sticky");
             }
         }
-        $(".total").on("click", () => {
-            console.log($("#sunday3").children(".timepicker-span-hours").val());
-        })
+   
+            // Post Button
+        $(document).on("click", ".post", () => {
+            let id = $(this)[0].activeElement.id
+            let newPost = {
+                name: $(`#name${id}`).text(),
+                sunStart: $(`#sunIn${id}`).val(),
+                sunEnd: $(`#sunOut${id}`).val(),
+                monStart: $(`#monIn${id}`).val(),
+                monEnd: $(`#monOut${id}`).val(),
+                tueStart: $(`#tueIn${id}`).val(),
+                tueEnd: $(`#tueOut${id}`).val(),
+                wedStart: $(`#wedIn${id}`).val(),
+                wedEnd: $(`#wedOut${id}`).val(),
+                thurStart: $(`#thurIn${id}`).val(),
+                thurEnd: $(`#thurOut${id}`).val(),
+                friStart: $(`#friIn${id}`).val(),
+                friEnd: $(`#friOut${id}`).val(),
+                satStart: $(`#satIn${id}`).val(),
+                satEnd:$(`#satOut${id}`).val()
+                }
+                console.log(newPost);
+                submitNewSchedule();
+        });
+        const submitNewSchedule = newPost => {
+            $.post("/api/scheduler/", newPost, () => {
+                console.log("posted");
+            });
+        };
     });
-
 
 </script>
