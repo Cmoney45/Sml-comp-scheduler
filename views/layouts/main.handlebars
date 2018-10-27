@@ -9,12 +9,34 @@
   {{!-- Materialize --}}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   {{!-- Moment.js --}}
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
   <title>Home Page</title>
 </head>
 
 <body>
   {{{body}}}
+  <script>
+    $(() => {
+      let userInfo = {
+        userID: localStorage.getItem("userID"),
+        isManager: localStorage.getItem("isManager"),
+        CompanyId: localStorage.getItem("CompanyId")
+      };
+
+      $("#main-home-link").on("click", () => {
+        document.location.href = `/${userInfo.CompanyId}/${userInfo.userID}/${userInfo.isManager}`;
+      });
+
+      $("#main-scheduler-link").on("click", () => {
+        document.location.href = `/${userInfo.CompanyId}/${userInfo.userID}/${userInfo.isManager}/scheduler`;
+      });
+
+      $("#main-log-out").on("click", () => {
+        localStorage.clear();
+        document.location.href = "/";
+      })
+    });
+  </script>
 </body>
 
 </html>

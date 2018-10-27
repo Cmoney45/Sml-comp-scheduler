@@ -1,0 +1,50 @@
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">MJC^2 Scheduler</a>
+        <div class="navbar" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="main-scheduler-link">Scheduler</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="main-log-out">Log Out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<table class="container">
+    <thead>
+        <th>Date</th>
+        <th>Start Hours</th>
+        <th>End Hours</th>
+    </thead>
+    <tbody id="my-schedule">
+    </tbody>
+</table>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+    $(() => {
+        $.ajax({
+            url: `/api/scheduler/${localStorage.getItem("userID")}`,
+            type: "GET"
+        }).then(data => {
+            for (scheduledDate in data) {
+                const row = $("<tr>");
+                const dateColumn = $("<td>").text(moment(data[scheduledDate].scheduledDate).format("MM/DD/YYYY"));
+                const beginColumn = $("<td>").text(moment(data[scheduledDate].scheduledBeginHour, "HH:mm:ss").format("h:mm a"));
+                const endColumn = $("<td>").text(moment(data[scheduledDate].scheduledEndHour, "HH:mm:ss").format("h:mm a"));
+
+                row.append(dateColumn);
+                row.append(beginColumn);
+                row.append(endColumn);
+
+                $("#my-schedule").append(row);
+            }
+        });
+    });
+</script>

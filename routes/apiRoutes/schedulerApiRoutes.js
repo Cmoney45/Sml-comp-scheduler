@@ -9,11 +9,12 @@ module.exports = app => {
   });
 
   // Get specific Scheduler
-  app.get("/api/scheduler/:id", (req, res) => {
-    const { id } = req.params;
+  app.get("/api/scheduler/:UserId", (req, res) => {
+    const { UserId } = req.params;
 
     db.Scheduler.findAll({
-      where: { id }
+      where: { UserId },
+      order: ["scheduledDate"]
     }).then(dbSchedulerUnique => {
       res.json(dbSchedulerUnique);
     });

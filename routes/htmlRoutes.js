@@ -2,26 +2,27 @@ const db = require("../models");
 
 module.exports = app => {
   // Load index page
-  app.get("/company/:CompanyId/:userId/:isManager", (req, res) => {
-    const { CompanyId } = req.params;
-    const { isManager } = req.params;
-    const { userId } = req.params;
+  app.get("/:CompanyId/:userId/:isManager", (req, res) => {
+    const { CompanyId, isManager } = req.params;
+    const id = req.params.userId;
 
-    if (isManager) {
+    console.log(CompanyId, isManager, id);
+
+    if (isManager === true) {
+      console.log(isManager === true)
       db.User.findAll({
         where: { CompanyId }
       }).then(User => {
-        res.render("index", {
-          msg: "Welcome!",
+        res.render("myschedule", {
           users: User
         });
       });
     } else {
+      console.log(isManager === true)
       db.User.findOne({
-        where: { CompanyId, userId }
+        where: { id, CompanyId }
       }).then(User => {
-        res.render("index", {
-          msg: "Welcome!",
+        res.render("myschedule", {
           users: User
         });
       });
@@ -40,12 +41,26 @@ module.exports = app => {
     res.render("login");
   });
 
-  app.get("/schedule", (req, res) => {
-    db.Scheduler.findAll({}).then(Scheduler => {
-      res.render("schedule", {
-        schedule: Scheduler
+  app.get("/:CompanyId/:userId/:isManager/scheduler", (req, res) => {
+    const { CompanyId, isManager, userId } = req.params;
+
+    if (isManager) {
+      db.User.findAll({
+        where: { CompanyId }
+      }).then(User => {
+        res.render("index", {
+          users: User
+        });
       });
-    });
+    } else {
+      db.User.findOne({
+        where: { CompanyId, userId }
+      }).then(User => {
+        res.render("myschedule", {
+          users: User
+        });
+      });
+    }
   });
 
   // Render the index page for any unmatched routes
