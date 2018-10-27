@@ -1,99 +1,15 @@
-// Get references to page elements
-const $exampleText = $("#example-text");
-const $exampleDescription = $("#example-description");
-const $submitBtn = $("#submit");
-const $exampleList = $("#example-list");
-
-// The API object contains methods for each kind of request we'll make
-const API = {
-  saveExample: example => {
-    return $.ajax({
-      headers: {
-        "Content-Type": "application/json"
-      },
-      type: "POST",
-      url: "api/examples",
-      data: JSON.stringify(example)
-    });
-  },
-  getExamples: () => {
-    return $.ajax({
-      url: "api/examples",
-      type: "GET"
-    });
-  },
-  deleteExample: id => {
-    return $.ajax({
-      url: "api/examples/" + id,
-      type: "DELETE"
-    });
-  }
-};
-
-// refreshExamples gets new examples from the db and repopulates the list
-const refreshExamples = () => {
-  API.getExamples().then(data => {
-    const $examples = data.map(example => {
-      const $a = $("<a>")
-        .text(example.text)
-        .attr("href", "/example/" + example.id);
-
-      const $li = $("<li>")
-        .attr({
-          class: "list-group-item",
-          "data-id": example.id
-        })
-        .append($a);
-
-      const $button = $("<button>")
-        .addClass("btn btn-danger float-right delete")
-        .text("ｘ");
-
-      $li.append($button);
-
-      return $li;
-    });
-
-    $exampleList.empty();
-    $exampleList.append($examples);
-  });
-};
-
-// handleFormSubmit is called whenever we submit a new example
-// Save the new example to the db and refresh the list
-const handleFormSubmit = event => {
-  event.preventDefault();
-
-  const example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+$(() => {
+  let userInfo = {
+    userID: localStorage.getItem("userID"),
+    isManager: localStorage.getItem("isManager"),
+    CompanyId: localStorage.getItem("CompanyId")
   };
 
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
-    return;
-  }
-
-  API.saveExample(example).then(() => {
-    refreshExamples();
+  $("#main-home-link").on("click", () => {
+    document.location.href = `/${userInfo.CompanyId}/${userInfo.userID}/${userInfo.isManager}`;
   });
 
-  $exampleText.val("");
-  $exampleDescription.val("");
-};
-
-// handleDeleteBtnClick is called when an example's delete button is clicked
-// Remove the example from the db and refresh the list
-const handleDeleteBtnClick = () => {
-  const idToDelete = $(this)
-    .parent()
-    .attr("data-id");
-
-  API.deleteExample(idToDelete).then(() => {
-    refreshExamples();
+  $("#main-scheduler-link").on("click", () => {
+    document.location.href = `/${userInfo.CompanyId}/${userInfo.userID}/${userInfo.isManager}/scheduler`;
   });
-};
-
-// Add event listeners to the submit and delete buttons
-$submitBtn.on("click", handleFormSubmit);
-$exampleList.on("click", ".delete", handleDeleteBtnClick);
+});

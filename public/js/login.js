@@ -16,7 +16,7 @@ $(() => {
           CompanyId: localStorage.getItem("CompanyId")
         };
 
-        document.location.href = `/company/${userInfo.CompanyId}/${userInfo.userID}/${userInfo.isManager}`;
+        document.location.href = `/${userInfo.CompanyId}/${userInfo.userID}/${userInfo.isManager}`;
       } else {
         alert("ERROR YOU ARE NOT PERMITTED HERE!");
       }
