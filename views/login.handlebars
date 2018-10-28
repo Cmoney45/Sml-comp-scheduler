@@ -34,9 +34,9 @@
           CompanyId: localStorage.getItem("CompanyId")
         };
 
-        document.location.href = `/${userInfo.CompanyId}/${userInfo.userID}/${userInfo.isManager}`;
+        document.location.href = `/${userInfo.CompanyId}/${userInfo.userID}/${userInfo.isManager}/index`;
       } else {
-        alert("ERROR YOU ARE NOT PERMITTED HERE!");
+        alert("ERROR 500: YOU SHALL NOT PASS!");
       }
     });
   });

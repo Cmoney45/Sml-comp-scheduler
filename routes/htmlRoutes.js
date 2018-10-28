@@ -2,7 +2,7 @@ const db = require("../models");
 
 module.exports = app => {
   // Load index page
-  app.get("/:CompanyId/:userId/:isManager", (req, res) => {
+  app.get("/:CompanyId/:userId/:isManager/index", (req, res) => {
     const { CompanyId, isManager } = req.params;
     const id = req.params.userId;
 
@@ -37,7 +37,7 @@ module.exports = app => {
     });
   });
 
-  app.get("/login", (req, res) => {
+  app.get("/", (req, res) => {
     res.render("login");
   });
 
@@ -63,13 +63,8 @@ module.exports = app => {
     }
   });
 
-  // Render the index page for any unmatched routes
+  // Render the login page for any unmatched routes
   app.get("*", (req, res) => {
-    db.User.findAll({}).then(User => {
-      res.render("login", {
-        msg: "Welcome!",
-        users: User
-      });
-    });
+    res.redirect("/");
   });
 };
