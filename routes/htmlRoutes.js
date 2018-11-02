@@ -13,7 +13,7 @@ module.exports = app => {
       db.User.findAll({
         where: { CompanyId }
       }).then(User => {
-        res.render("myschedule", {
+        res.render("mySchedule", {
           users: User
         });
       });
@@ -22,7 +22,7 @@ module.exports = app => {
       db.User.findOne({
         where: { id, CompanyId }
       }).then(User => {
-        res.render("myschedule", {
+        res.render("mySchedule", {
           users: User
         });
       });
