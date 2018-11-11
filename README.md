@@ -1,4 +1,4 @@
-# “Home Manager”
+# Small Company Scheduler
 
 A collaborative project made for the University of Minnesota Full Stack Web Development Coding Boot Camp, August 2018
 
