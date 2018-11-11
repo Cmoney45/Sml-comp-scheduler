@@ -1,6 +1,6 @@
 # Small Company Scheduler
 
-A collaborative project made for the University of Minnesota Full Stack Web Development Coding Boot Camp, August 2018
+A collaborative project made for the University of Minnesota Full Stack Web Development Coding Boot Camp, October 2018
 
 by [Chris Berry](https://github.com/Casttle), [James Breckenitch](https://github.com/jrbreckenitch), [Colton Scherer](https://github.com/Cmoney45), & [MarenJung](https://github.com/MarenJung)
 
